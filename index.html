@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo list</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+    <div class="main-block">
+        <div class="container">
+            <h1>toDO</h1>
+            <div class="todo-box">
+                <input type="text" placeholder="What to do" v-model="inputValue" v-on:keyup.enter="addItem">
+                <div class="list-box">
+                    <ul>
+                        <li v-for="(item, index) in list" :class="{check : item.isCheck}" v-show="item.show">
+                            <span @click="checkItem(index)" class="text">{{item.name}}</span>
+                            <span class="delete-btn" @click="deleteItem(index)">x</span>
+                        </li>
+                    </ul>
+                    <div class="footer" v-show="showFooter">
+                        <span>Left to do: {{listCount}}</span>
+                        <div class="btn-block">
+                            <div class="btn" @click="showAll">All</div>
+                            <div class="btn" @click="showChecked">Checked</div>
+                            <div class="btn" @click="showUnchecked">Unchecked</div>
+                        </div>
+                        <div class="btn" v-show="checked > 0" @click="clear()">Clear completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/jquery-3.4.1.min.js"></script>
+<script src="scripts/vue.js"></script>
+</body>
+</html>

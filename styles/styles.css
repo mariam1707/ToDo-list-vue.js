@@ -1,0 +1,113 @@
+
+
+#app{
+    font-family: Poppins, sans-serif;
+    line-height: normal;
+    font-size: 18px;
+    font-weight: normal;
+}
+.main-block{
+    width: 100%;
+    height: 100vh;
+    background: url("../images/bg-image1.jpg") no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-block .container{
+    width: 60%;
+    min-height: 70vh;
+    background: rgba(116,181,138, 0.5);
+}
+.main-block h1{
+    background: lightpink;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 3px 3px 20px 1px rgba(0,0,0,0.6);
+    text-shadow: 4px 3px 0 rgba(0,0,0,0.6);
+}
+.todo-box{
+    background: #fff;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 3px 3px 20px 1px rgba(0,0,0,0.6);
+}
+.todo-box input{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    outline: none;
+}
+.todo-box input::placeholder{
+    font-size: 22px;
+    color: lightgrey;
+ }
+.list-box{
+    box-shadow:
+            0 0 0 1px rgb(194, 192, 184) inset,
+            0 5px 0 -4px rgb(255, 255, 255),
+            0 5px 0 -3px rgb(194, 192, 184),
+            0 11px 0 -8px rgb(255, 255, 255),
+            0 11px 0 -7px rgb(194, 192, 184);
+}
+.todo-box ul{
+    list-style-type: circle;
+    overflow-x: hidden;
+}
+.todo-box ul li{
+    font-size: 20px;
+    padding: 10px 0;
+    position: relative;
+    cursor: pointer;
+    max-width: 90%;
+}
+.todo-box ul li:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -40px;
+    width: 120%;
+    height: 1px;
+    background: lightgrey;
+}
+.todo-box ul li.check{
+    color: gray;
+    text-decoration: line-through;
+}
+.todo-box ul li:hover .delete-btn{
+    display: inline-block;
+}
+.text{
+    display: block;
+}
+.delete-btn{
+    color: red;
+    position: absolute;
+    right: -10px;
+    top: calc(50% - 15px);
+    padding: 0 5px;
+    display: none;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+.delete-btn:hover{
+    opacity: 1;
+}
+.footer .btn{
+    border: 1px solid lightgrey;
+    padding: 5px 10px;
+}
+.footer{
+    padding: 5px 20px 15px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer .btn-block{
+    width: auto;
+}
